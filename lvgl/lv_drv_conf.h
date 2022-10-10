@@ -272,7 +272,7 @@
  *  AD TOUCH
  *--------------*/
 #ifndef USE_AD_TOUCH
-#  define USE_AD_TOUCH        0
+#  define USE_AD_TOUCH        1
 #endif
 
 #if USE_AD_TOUCH
@@ -284,7 +284,7 @@
  * Mouse or touchpad on PC (using SDL)
  *-------------------------------------*/
 #ifndef USE_MOUSE
-#  define USE_MOUSE           0
+#  define USE_MOUSE           1
 #endif
 
 #if USE_MOUSE
