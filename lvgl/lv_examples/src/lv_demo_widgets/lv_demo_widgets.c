@@ -6,8 +6,8 @@
 /*********************
  *      INCLUDES
  *********************/
-#include "../../lv_examples.h"
-#include "lv_demo_widgets.h"
+//#include "../../lv_examples.h"
+//#include "lv_demo_widgets.h"
 #include <stdio.h>
 
 
@@ -28,14 +28,12 @@
 
 //static lv_style_t style_box;
 
-#if LV_USE_DEMO_WIDGETS
+
 
 static void event_handler(lv_obj_t* obj, lv_event_t event)
 {
     if (event == LV_EVENT_CLICKED) {
-         lv_obj_t* label;
-         label = lv_label_create(obj, NULL);
-         lv_label_set_text(label, "Cliccato");
+         
 
     }
     else if (event == LV_EVENT_VALUE_CHANGED) {
@@ -68,4 +66,4 @@ void lv_demo_widgets(void)
 
 }
 
-#endif
+
