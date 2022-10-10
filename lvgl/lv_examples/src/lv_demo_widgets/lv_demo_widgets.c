@@ -78,9 +78,9 @@ void lv_demo_widgets(void)
     }
 #endif
 
-    //t1 = lv_tabview_add_tab(tv, "Controls");
-    //t2 = lv_tabview_add_tab(tv, "Visuals");
-    //t3 = lv_tabview_add_tab(tv, "Selectors");
+    t1 = lv_tabview_add_tab(tv, "Controls");
+    t2 = lv_tabview_add_tab(tv, "Visuals");
+    t3 = lv_tabview_add_tab(tv, "Selectors");
 
 
     lv_style_init(&style_box);
@@ -88,7 +88,7 @@ void lv_demo_widgets(void)
     lv_style_set_value_ofs_y(&style_box, LV_STATE_DEFAULT, - LV_DPX(10));
     lv_style_set_margin_top(&style_box, LV_STATE_DEFAULT, LV_DPX(30));
 
-    //controls_create(t1);
+    controls_create(t1);
     //visuals_create(t2);
     //selectors_create(t3);
 
@@ -398,7 +398,6 @@ static void visuals_create(lv_obj_t * parent)
     lv_task_create(bar_anim, 100, LV_TASK_PRIO_LOW, bar);
 }
 
-
 static void selectors_create(lv_obj_t * parent)
 {
     lv_page_set_scrl_layout(parent, LV_LAYOUT_PRETTY_MID);
@@ -572,7 +571,6 @@ static void ta_event_cb(lv_obj_t * ta, lv_event_t e)
     }
 }
 
-
 static void kb_event_cb(lv_obj_t * _kb, lv_event_t e)
 {
     lv_keyboard_def_event_cb(kb, e);
@@ -585,7 +583,6 @@ static void kb_event_cb(lv_obj_t * _kb, lv_event_t e)
         }
     }
 }
-
 
 static void bar_anim(lv_task_t * t)
 {
