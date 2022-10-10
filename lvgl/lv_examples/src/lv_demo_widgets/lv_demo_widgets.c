@@ -33,10 +33,10 @@
 static void event_handler(lv_obj_t* obj, lv_event_t event)
 {
     if (event == LV_EVENT_CLICKED) {
-        lv_btn_set_state(obj, LV_BTN_STATE_CHECKED_PRESSED)
+        lv_btn_set_state(obj, LV_BTN_STATE_CHECKED_PRESSED);
     }
     else if (event == LV_EVENT_VALUE_CHANGED) {
-        lv_btn_set_state(obj, LV_BTN_STATE_CHECKED_DISABLED)
+        lv_btn_set_state(obj, LV_BTN_STATE_CHECKED_DISABLED);
         lv_btn_set_checkable(obj, true);
     }
 }
