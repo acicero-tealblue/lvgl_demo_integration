@@ -6,7 +6,7 @@
 //#include <stdio.h>
 
 // display buffer size - not sure if this size is really needed
-#define LV_BUF_SIZE 384000		// 800x480
+#define LV_BUF_SIZE 1024000		// 1280x800
 // A static variable to store the display buffers
 static lv_disp_buf_t disp_buf;
 // Static buffer(s). The second buffer is optional
