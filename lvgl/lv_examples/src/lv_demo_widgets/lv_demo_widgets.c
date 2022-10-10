@@ -78,9 +78,9 @@ void lv_demo_widgets(void)
     }
 #endif
 
-    t1 = lv_tabview_add_tab(tv, "Controls");
-    t2 = lv_tabview_add_tab(tv, "Visuals");
-    t3 = lv_tabview_add_tab(tv, "Selectors");
+    //t1 = lv_tabview_add_tab(tv, "Controls");
+    //t2 = lv_tabview_add_tab(tv, "Visuals");
+    //t3 = lv_tabview_add_tab(tv, "Selectors");
 
 
     lv_style_init(&style_box);
@@ -88,12 +88,12 @@ void lv_demo_widgets(void)
     lv_style_set_value_ofs_y(&style_box, LV_STATE_DEFAULT, - LV_DPX(10));
     lv_style_set_margin_top(&style_box, LV_STATE_DEFAULT, LV_DPX(30));
 
-    controls_create(t1);
-    visuals_create(t2);
-    selectors_create(t3);
+    //controls_create(t1);
+    //visuals_create(t2);
+    //selectors_create(t3);
 
 #if LV_DEMO_WIDGETS_SLIDESHOW
-    lv_task_create(tab_changer_task_cb, 8000, LV_TASK_PRIO_LOW, NULL);
+    //lv_task_create(tab_changer_task_cb, 8000, LV_TASK_PRIO_LOW, NULL);
 #endif
 
 }
@@ -139,7 +139,7 @@ static void controls_create(lv_obj_t * parent)
     label = lv_label_create(btn, NULL);
     lv_label_set_text(label ,"Button");
 
-    lv_switch_create(h, NULL);
+    //lv_switch_create(h, NULL);
 
     lv_checkbox_create(h, NULL);
 
@@ -196,7 +196,7 @@ static void controls_create(lv_obj_t * parent)
     lv_cont_set_fit4(ta, LV_FIT_PARENT, LV_FIT_PARENT, LV_FIT_NONE, LV_FIT_PARENT);
 
 #if LV_DEMO_WIDGETS_SLIDESHOW
-    tab_content_anim_create(parent);
+    //tab_content_anim_create(parent);
 #endif
 }
 
