@@ -133,8 +133,8 @@ static void controls_create(lv_obj_t * parent)
     lv_obj_set_width(btn, lv_obj_get_width_grid(h, disp_size <= LV_DISP_SIZE_SMALL ? 1 : 2, 1));
     lv_obj_t * label = lv_label_create(btn, NULL);
     lv_label_set_text(label ,"Button");
-
-    lv_checkbox_create(h, NULL);
+    lv_obj_set_event_cb(label, slider_event_cb);
+    //lv_checkbox_create(h, NULL);
 
     lv_coord_t fit_w = lv_obj_get_width_fit(h);
 
@@ -143,16 +143,7 @@ static void controls_create(lv_obj_t * parent)
     lv_obj_set_event_cb(slider, slider_event_cb);
     lv_obj_set_width_margin(slider, fit_w);
 
-    /*Use the knobs style value the display the current value in focused state*/
-    lv_obj_set_style_local_margin_top(slider, LV_SLIDER_PART_BG, LV_STATE_DEFAULT, LV_DPX(25));
-    lv_obj_set_style_local_value_font(slider, LV_SLIDER_PART_KNOB, LV_STATE_DEFAULT, lv_theme_get_font_small());
-    lv_obj_set_style_local_value_ofs_y(slider, LV_SLIDER_PART_KNOB, LV_STATE_FOCUSED, - LV_DPX(25));
-    lv_obj_set_style_local_value_opa(slider, LV_SLIDER_PART_KNOB, LV_STATE_DEFAULT, LV_OPA_TRANSP);
-    lv_obj_set_style_local_value_opa(slider, LV_SLIDER_PART_KNOB, LV_STATE_FOCUSED, LV_OPA_COVER);
-    lv_obj_set_style_local_transition_time(slider, LV_SLIDER_PART_KNOB, LV_STATE_DEFAULT, 300);
-    lv_obj_set_style_local_transition_prop_5(slider, LV_SLIDER_PART_KNOB, LV_STATE_DEFAULT, LV_STYLE_VALUE_OFS_Y);
-    lv_obj_set_style_local_transition_prop_6(slider, LV_SLIDER_PART_KNOB, LV_STATE_DEFAULT, LV_STYLE_VALUE_OPA);
-
+    
     slider = lv_slider_create(h, slider);
     lv_slider_set_type(slider, LV_SLIDER_TYPE_RANGE);
     lv_slider_set_value(slider, 70, LV_ANIM_OFF);
