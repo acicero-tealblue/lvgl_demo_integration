@@ -33,11 +33,11 @@
 static void event_handler(lv_obj_t* obj, lv_event_t event)
 {
     if (event == LV_EVENT_CLICKED) {
-         
+        printf("Clicked\n");
 
     }
     else if (event == LV_EVENT_VALUE_CHANGED) {
-
+        printf("Toggled\n");
     }
 }
 
