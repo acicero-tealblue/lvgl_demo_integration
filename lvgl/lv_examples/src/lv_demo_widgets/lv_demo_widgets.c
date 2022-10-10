@@ -132,8 +132,8 @@ static void controls_create(lv_obj_t * parent)
     lv_btn_set_fit2(btn, LV_FIT_NONE, LV_FIT_TIGHT);
     lv_obj_set_width(btn, lv_obj_get_width_grid(h, disp_size <= LV_DISP_SIZE_SMALL ? 1 : 2, 1));
     lv_obj_t * label = lv_label_create(btn, NULL);
-    lv_label_set_text(label ,"Button");
-    lv_obj_set_event_cb(label, ta_event_cb);
+    lv_label_set_text(btn ,"Button");
+    lv_obj_set_event_cb(label, kb_event_cb);
     //lv_checkbox_create(h, NULL);
 
     lv_coord_t fit_w = lv_obj_get_width_fit(h);
@@ -202,54 +202,6 @@ static void kb_event_cb(lv_obj_t * _kb, lv_event_t e)
             kb = NULL;
         }
     }
-}
-
-static void bar_anim(lv_task_t * t)
-{
-    static uint32_t x = 0;
-    lv_obj_t * bar = t->user_data;
-
-    static char buf[64];
-    lv_snprintf(buf, sizeof(buf), "Copying %d/%d", x, lv_bar_get_max_value(bar));
-    lv_obj_set_style_local_value_str(bar, LV_BAR_PART_BG, LV_STATE_DEFAULT, buf);
-
-    lv_bar_set_value(bar, x, LV_ANIM_OFF);
-    x++;
-    if(x > lv_bar_get_max_value(bar)) x = 0;
-}
-
-static void arc_anim(lv_obj_t * arc, lv_anim_value_t value)
-{
-    lv_arc_set_end_angle(arc, value);
-
-    static char buf[64];
-    lv_snprintf(buf, sizeof(buf), "%d", value);
-    lv_obj_t * label = lv_obj_get_child(arc, NULL);
-    lv_label_set_text(label, buf);
-    lv_obj_align(label, arc, LV_ALIGN_CENTER, 0, 0);
-
-}
-
-static void linemeter_anim(lv_obj_t * linemeter, lv_anim_value_t value)
-{
-    lv_linemeter_set_value(linemeter, value);
-
-    static char buf[64];
-    lv_snprintf(buf, sizeof(buf), "%d", value);
-    lv_obj_t * label = lv_obj_get_child(linemeter, NULL);
-    lv_label_set_text(label, buf);
-    lv_obj_align(label, linemeter, LV_ALIGN_CENTER, 0, 0);
-}
-
-static void gauge_anim(lv_obj_t * gauge, lv_anim_value_t value)
-{
-    lv_gauge_set_value(gauge, 0, value);
-
-    static char buf[64];
-    lv_snprintf(buf, sizeof(buf), "%d", value);
-    lv_obj_t * label = lv_obj_get_child(gauge, NULL);
-    lv_label_set_text(label, buf);
-    lv_obj_align(label, gauge, LV_ALIGN_IN_TOP_MID, 0, lv_obj_get_y(label));
 }
 
 static void table_event_cb(lv_obj_t * table, lv_event_t e)
