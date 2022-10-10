@@ -63,7 +63,7 @@ static lv_style_t style_box;
 static void event_handler(lv_obj_t* obj, lv_event_t event)
 {
     if (event == LV_EVENT_VALUE_CHANGED) {
-        lv_btn_set_fit2(btn2, LV_FIT_NONE, LV_FIT_TIGHT);
+        lv_btn_set_fit2(obj, LV_FIT_NONE, LV_FIT_TIGHT);
     }
 }
 
