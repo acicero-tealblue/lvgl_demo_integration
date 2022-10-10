@@ -33,11 +33,13 @@
 static void event_handler(lv_obj_t* obj, lv_event_t event)
 {
     if (event == LV_EVENT_CLICKED) {
-        lv_btn_set_state(obj, LV_BTN_STATE_CHECKED_PRESSED);
+         lv_obj_t* label;
+         label = lv_label_create(obj, NULL);
+         lv_label_set_text(label, "Cliccato");
+
     }
     else if (event == LV_EVENT_VALUE_CHANGED) {
-        lv_btn_set_state(obj, LV_BTN_STATE_CHECKED_DISABLED);
-        lv_btn_set_checkable(obj, true);
+
     }
 }
 
