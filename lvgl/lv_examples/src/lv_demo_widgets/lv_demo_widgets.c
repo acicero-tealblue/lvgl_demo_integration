@@ -28,7 +28,7 @@
 
 //static lv_style_t style_box;
 
-#if LV_USE_BTN
+#if LV_USE_DEMO_WIDGETS
 
 static void event_handler(lv_obj_t* obj, lv_event_t event)
 {
