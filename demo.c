@@ -50,8 +50,8 @@ int main(void)
 */
 
 	//lv_demo_widgets();
-	//lv_demo_benchmark();
-	lv_demo_stress();
+	lv_demo_benchmark();
+	//lv_demo_stress();
 
 	// Handle LitlevGL tasks (tickless mode)
 	while(1) {
