@@ -28,7 +28,7 @@ static lv_obj_t * kb;
 
 static lv_style_t style_box;
 
-
+#if LV_USE_BTN
 
 static void event_handler(lv_obj_t* obj, lv_event_t event)
 {
@@ -39,6 +39,7 @@ static void event_handler(lv_obj_t* obj, lv_event_t event)
         printf("Toggled\n");
     }
 }
+
 
 
 void lv_demo_widgets(void)
