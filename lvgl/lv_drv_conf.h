@@ -272,7 +272,7 @@
  *  AD TOUCH
  *--------------*/
 #ifndef USE_AD_TOUCH
-#  define USE_AD_TOUCH        0
+#  define USE_AD_TOUCH        1
 #endif
 
 #if USE_AD_TOUCH
@@ -317,7 +317,7 @@
  * Mouse or touchpad as evdev interface (for Linux based systems)
  *------------------------------------------------*/
 #ifndef USE_EVDEV
-#  define USE_EVDEV           0
+#  define USE_EVDEV           1
 #endif
 
 #if USE_EVDEV
