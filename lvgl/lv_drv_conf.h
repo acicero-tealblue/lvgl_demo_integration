@@ -272,7 +272,7 @@
  *  AD TOUCH
  *--------------*/
 #ifndef USE_AD_TOUCH
-#  define USE_AD_TOUCH        1
+#  define USE_AD_TOUCH        0
 #endif
 
 #if USE_AD_TOUCH
