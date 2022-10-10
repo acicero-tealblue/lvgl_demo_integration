@@ -78,7 +78,7 @@ void lv_demo_widgets(void)
     }
 #endif
 
-    t1 = lv_tabview_add_tab(tv, "Controls");
+    t1 = lv_tabview_add_tab(tv, "ALESSIO");
     //t2 = lv_tabview_add_tab(tv, "Visuals");
     //t3 = lv_tabview_add_tab(tv, "Selectors");
 
@@ -105,7 +105,7 @@ void lv_demo_widgets(void)
 
 static void controls_create(lv_obj_t * parent)
 {
-    lv_page_set_scrl_layout(parent, LV_LAYOUT_PRETTY_TOP);
+    //lv_page_set_scrl_layout(parent, LV_LAYOUT_PRETTY_TOP);
 
     lv_disp_size_t disp_size = lv_disp_get_size_category(NULL);
     lv_coord_t grid_w = lv_page_get_width_grid(parent, disp_size <= LV_DISP_SIZE_SMALL ? 1 : 2, 1);
@@ -133,13 +133,6 @@ static void controls_create(lv_obj_t * parent)
     lv_obj_set_width(btn, lv_obj_get_width_grid(h, disp_size <= LV_DISP_SIZE_SMALL ? 1 : 2, 1));
     lv_obj_t * label = lv_label_create(btn, NULL);
     lv_label_set_text(label ,"Button");
-
-    btn = lv_btn_create(h, btn);
-    lv_btn_toggle(btn);
-    label = lv_label_create(btn, NULL);
-    lv_label_set_text(label ,"Button");
-
-    //lv_switch_create(h, NULL);
 
     lv_checkbox_create(h, NULL);
 
@@ -171,39 +164,8 @@ static void controls_create(lv_obj_t * parent)
     lv_event_send(slider, LV_EVENT_VALUE_CHANGED, NULL);      /*To refresh the text*/
     if(lv_obj_get_width(slider) > fit_w) lv_obj_set_width(slider, fit_w);
 
-    // ----------------------
-    // CONTENITORE Text input
-    // ----------------------
-    //h = lv_cont_create(parent, h);
-    //lv_cont_set_fit(h, LV_FIT_NONE);
-    //lv_obj_set_style_local_value_str(h, LV_CONT_PART_MAIN, LV_STATE_DEFAULT, "Text input");
-
-    //lv_obj_t * ta = lv_textarea_create(h, NULL);
-    //lv_cont_set_fit2(ta, LV_FIT_PARENT, LV_FIT_NONE);
-    //lv_textarea_set_text(ta, "");
-    //lv_textarea_set_placeholder_text(ta, "E-mail address");
-    //lv_textarea_set_one_line(ta, true);
-    //lv_textarea_set_cursor_hidden(ta, true);
-    //lv_obj_set_event_cb(ta, ta_event_cb);
-
-    //ta = lv_textarea_create(h, ta);
-    //lv_textarea_set_pwd_mode(ta, true);
-    //lv_textarea_set_placeholder_text(ta, "Password");
-
-    //ta = lv_textarea_create(h, NULL);
-    //lv_cont_set_fit2(ta, LV_FIT_PARENT, LV_FIT_NONE);
-    //lv_textarea_set_text(ta, "");
-    //lv_textarea_set_placeholder_text(ta, "Message");
-    //lv_textarea_set_cursor_hidden(ta, true);
-    //lv_obj_set_event_cb(ta, ta_event_cb);
-    //lv_cont_set_fit4(ta, LV_FIT_PARENT, LV_FIT_PARENT, LV_FIT_NONE, LV_FIT_PARENT);
-    // ----------------------------
-    //  END - CONTENITORE Text input
-    // -----------------------------
-
-
 #if LV_DEMO_WIDGETS_SLIDESHOW
-    //tab_content_anim_create(parent);
+    tab_content_anim_create(parent);
 #endif
 }
 
