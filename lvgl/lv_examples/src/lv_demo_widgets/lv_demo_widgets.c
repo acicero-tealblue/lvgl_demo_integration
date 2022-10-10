@@ -8,7 +8,7 @@
  *********************/
 #include "../../lv_examples.h"
 #include "lv_demo_widgets.h"
-
+#include <stdio.h>
 
 
 /*********************
