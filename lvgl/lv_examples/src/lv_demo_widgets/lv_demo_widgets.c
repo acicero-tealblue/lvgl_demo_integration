@@ -20,13 +20,13 @@
 /**********************
  *  STATIC VARIABLES
  **********************/
-static lv_obj_t * tv;
-static lv_obj_t * t1;
-static lv_obj_t * t2;
-static lv_obj_t * t3;
-static lv_obj_t * kb;
+//static lv_obj_t * tv;
+//static lv_obj_t * t1;
+//static lv_obj_t * t2;
+//static lv_obj_t * t3;
+//static lv_obj_t * kb;
 
-static lv_style_t style_box;
+//static lv_style_t style_box;
 
 #if LV_USE_BTN
 
@@ -65,4 +65,4 @@ void lv_demo_widgets(void)
 
 }
 
-
+#endif
