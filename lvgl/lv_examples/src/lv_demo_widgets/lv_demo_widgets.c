@@ -6,7 +6,9 @@
 /*********************
  *      INCLUDES
  *********************/
-#include "../../lv_examples.h"
+#include "../../../lvgl/lvgl.h"
+#include "../../lv_ex_conf.h"
+//#include "../../lv_examples.h"
 //#include "lv_demo_widgets.h"
 //#include <stdio.h>
 
@@ -20,6 +22,7 @@
 /**********************
  *  STATIC VARIABLES
  **********************/
+
 //static lv_obj_t * tv;
 //static lv_obj_t * t1;
 //static lv_obj_t * t2;
