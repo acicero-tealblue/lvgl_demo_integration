@@ -132,8 +132,8 @@ static void controls_create(lv_obj_t * parent)
     lv_btn_set_fit2(btn, LV_FIT_NONE, LV_FIT_TIGHT);
     lv_obj_set_width(btn, lv_obj_get_width_grid(h, disp_size <= LV_DISP_SIZE_SMALL ? 1 : 2, 1));
     lv_obj_t * label = lv_label_create(btn, NULL);
-    lv_label_set_text(btn ,"Button");
-    lv_obj_set_event_cb(label, kb_event_cb);
+    lv_label_set_text(label ,"Button");
+    lv_obj_set_event_cb(btn, kb_event_cb);
     //lv_checkbox_create(h, NULL);
 
     lv_coord_t fit_w = lv_obj_get_width_fit(h);
