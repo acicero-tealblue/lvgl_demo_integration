@@ -139,7 +139,7 @@ void app_create(void){
     lv_obj_add_style(teethContainer, &whiteBackground, LV_STATE_DEFAULT);
 
     lv_obj_t * rightLabel = lv_label_create(teethContainer);
-    lv_obj_set_align(rightLabel, LV_ALIGN_LEFT_MID);
+    lv_obj_set_align(rightLabel, LV_ALIGN_IN_LEFT_MID);
     lv_label_set_text(rightLabel, "R");
     lv_obj_add_style(rightLabel, &textRoboto24GreenStyle, LV_STATE_DEFAULT);
 
