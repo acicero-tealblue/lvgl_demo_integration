@@ -1,26 +1,26 @@
 ﻿#include "widgetDemo.h"
 
 /* Widgets */
-lv_obj_t* switch1;
-lv_obj_t* meter;
-lv_obj_t* spinbox;
-lv_obj_t* ball;
-lv_obj_t* spinner;
-lv_obj_t* float_btn;
-lv_obj_t* drawer;
-lv_obj_t* arrow;
-lv_obj_t* dropdownList;
-lv_obj_t* arc;
-lv_obj_t* contRowDrawer;
+lv_obj_t * switch1;
+lv_obj_t * meter;
+lv_obj_t * spinbox;
+lv_obj_t * ball;
+lv_obj_t * spinner;
+lv_obj_t * float_btn;
+lv_obj_t * drawer;
+lv_obj_t * arrow;
+lv_obj_t * dropdownList;
+lv_obj_t * arc;
+lv_obj_t * contRowDrawer;
 
 /* Menu pages */
-lv_obj_t* menu;
-lv_obj_t* root_page;
-lv_obj_t* switchTransitionPage;
-lv_obj_t* meterPage;
-lv_obj_t* settingsPage;
-lv_obj_t* keyboardPage;
-lv_obj_t* drawerPage;
+lv_obj_t * menu;
+lv_obj_t * root_page;
+lv_obj_t * switchTransitionPage;
+lv_obj_t * meterPage;
+lv_obj_t * settingsPage;
+lv_obj_t * keyboardPage;
+lv_obj_t * drawerPage;
 
 /* Animations */
 lv_anim_t ballAnim;
@@ -31,34 +31,34 @@ lv_anim_t drawerAnim;
 int drawerHeightMin = 30;
 int drawerHeightMax = 180;
 
-void animSize(void* obj, int32_t value) {
+void animSize(void * obj, int32_t value) {
     lv_obj_set_size(obj, value, value);
 }
 
-void animYmove(void* obj, int32_t value) {
+void animYmove(void * obj, int32_t value) {
     lv_obj_set_y(obj, value);
 }
 
-void animMeter(void* indic, int32_t value)
+void animMeter(void * indic, int32_t value)
 {
     lv_meter_set_indicator_value(meter, indic, value);
 }
 
 
-void switch_cb(lv_event_t* e);
-lv_obj_t* createMenuCont(lv_obj_t* parent, const char* icon, const char* txt);
-void initTransitionMenu(lv_obj_t* parent);
-void initMeterMenu(lv_obj_t* parent);
-void initSettingsMenu(lv_obj_t* parent);
-void initKeyboardMenu(lv_obj_t* parent);
-void initDrawerMenu(lv_obj_t* parent);
-void dialogBotton_cb(lv_event_t* e);
-void menuPageChanged_cb(lv_event_t* e);
+void switch_cb(lv_event_t * e);
+lv_obj_t* createMenuCont(lv_obj_t * parent, const char* icon, const char* txt);
+void initTransitionMenu(lv_obj_t * parent);
+void initMeterMenu(lv_obj_t * parent);
+void initSettingsMenu(lv_obj_t * parent);
+void initKeyboardMenu(lv_obj_t * parent);
+void initDrawerMenu(lv_obj_t * parent);
+void dialogBotton_cb(lv_event_t * e);
+void menuPageChanged_cb(lv_event_t * e);
 
 
 
 
-void widgetInit(lv_obj_t* parent) {
+void widgetInit(lv_obj_t * parent) {
     /*  Creazione menu */
     menu = lv_menu_create(parent);
 
@@ -72,12 +72,12 @@ void widgetInit(lv_obj_t* parent) {
     lv_obj_set_size(menu, lv_obj_get_width(parent), lv_obj_get_height(parent));
     lv_obj_center(menu);
 
-    lv_obj_t* cont;
-    lv_obj_t* section;
+    lv_obj_t * cont;
+    lv_obj_t * section;
 
 
     /* Creazione pagine menu*/
-    lv_obj_t* switchTransitionPage = lv_menu_page_create(menu, NULL);
+    lv_obj_t * switchTransitionPage = lv_menu_page_create(menu, NULL);
     lv_obj_set_style_pad_hor(switchTransitionPage, lv_obj_get_style_pad_left(lv_menu_get_main_header(menu), 0), 0);
     lv_menu_separator_create(switchTransitionPage);
     section = lv_obj_create(switchTransitionPage);
@@ -160,9 +160,9 @@ void widgetInit(lv_obj_t* parent) {
 
 
 
-void switch_cb(lv_event_t* e) {
+void switch_cb(lv_event_t * e) {
     int ystart, ystop, sizeStart, sizeStop;
-    lv_obj_t* target = lv_event_get_target(e);
+    lv_obj_t * target = lv_event_get_target(e);
     lv_state_t state = lv_obj_get_state(target);
     ystart = 0;
     ystop = 400;
@@ -188,20 +188,20 @@ void switch_cb(lv_event_t* e) {
     lv_anim_start(&ballAnim);
 }
 
-void messagaBox_cb(lv_event_t* e) {
+void messagaBox_cb(lv_event_t * e) {
     lv_obj_t* target = lv_event_get_current_target(e);
     /* Qua possi gestire il bottone schiacciato*/
 }
 
-void dialogBotton_cb(lv_event_t* e) {
+void dialogBotton_cb(lv_event_t * e) {
     static const char* btns[] = { "Conferma", "Annulla", "" };
 
-    lv_obj_t* mbox1 = lv_msgbox_create(NULL, "Dialog", "Conferma o annulla", btns, true);
+    lv_obj_t * mbox1 = lv_msgbox_create(NULL, "Dialog", "Conferma o annulla", btns, true);
     lv_obj_add_event_cb(mbox1, messagaBox_cb, LV_EVENT_VALUE_CHANGED, NULL);
     lv_obj_center(mbox1);
 }
 
-void lv_spinbox_increment_event_cb(lv_event_t* e)
+void lv_spinbox_increment_event_cb(lv_event_t * e)
 {
     lv_event_code_t code = lv_event_get_code(e);
     if (code == LV_EVENT_SHORT_CLICKED || code == LV_EVENT_LONG_PRESSED_REPEAT) {
@@ -220,7 +220,7 @@ void menuHiding() {
     lv_obj_add_flag(menu, LV_OBJ_FLAG_HIDDEN);
 }
 
-void menuLoading(lv_obj_t* parent) {
+void menuLoading(lv_obj_t * parent) {
     lv_obj_add_flag(menu, LV_OBJ_FLAG_HIDDEN);
     spinner = lv_spinner_create(parent, 1000, 60);
     lv_obj_set_size(spinner, 100, 100);
@@ -230,7 +230,7 @@ void menuLoading(lv_obj_t* parent) {
 }
 
 
-void menuPageChanged_cb(lv_event_t* e) {
+void menuPageChanged_cb(lv_event_t * e) {
     lv_obj_t* target = lv_event_get_target(e);
     lv_obj_t* page = lv_menu_get_cur_main_page(target);
     if (page == meterPage)
@@ -245,17 +245,17 @@ void menuPageChanged_cb(lv_event_t* e) {
     }
 }
 
-static void lv_spinbox_decrement_event_cb(lv_event_t* e)
+static void lv_spinbox_decrement_event_cb(lv_event_t * e)
 {
     lv_event_code_t code = lv_event_get_code(e);
     if (code == LV_EVENT_SHORT_CLICKED || code == LV_EVENT_LONG_PRESSED_REPEAT) {
         lv_spinbox_decrement(spinbox);
     }
 }
-lv_obj_t* createMenuCont(lv_obj_t* parent, const char* icon, const char* txt) {
-    lv_obj_t* obj = lv_menu_cont_create(parent);
-    lv_obj_t* img = NULL;
-    lv_obj_t* label = NULL;
+lv_obj_t * createMenuCont(lv_obj_t * parent, const char* icon, const char* txt) {
+    lv_obj_t * obj = lv_menu_cont_create(parent);
+    lv_obj_t * img = NULL;
+    lv_obj_t * label = NULL;
     if (icon) {
         img = lv_img_create(obj);
         lv_img_set_src(img, icon);
@@ -270,12 +270,12 @@ lv_obj_t* createMenuCont(lv_obj_t* parent, const char* icon, const char* txt) {
     return obj;
 }
 
-void animDrawer_cb(void* obj, int32_t value)
+void animDrawer_cb(void * obj, int32_t value)
 {
     lv_obj_set_height(obj, value);
 }
 
-void drawerPressed_cb(lv_event_t* e) {
+void drawerPressed_cb(lv_event_t * e) {
     
     lv_anim_set_var(&drawerAnim, drawer);
     
@@ -299,7 +299,7 @@ void drawerPressed_cb(lv_event_t* e) {
     lv_anim_start(&drawerAnim);
 }
 
-void toggleBtn_cb(lv_event_t* e) {
+void toggleBtn_cb(lv_event_t * e) {
     lv_obj_t* target = lv_event_get_target(e);
     lv_obj_t* cont = lv_event_get_user_data(e);
     int n = lv_obj_get_child_cnt(cont);
@@ -311,7 +311,7 @@ void toggleBtn_cb(lv_event_t* e) {
     }
 }
 
-void initDrawerMenu(lv_obj_t* parent) {
+void initDrawerMenu(lv_obj_t * parent) {
     drawer = lv_obj_create(parent);
     lv_obj_set_align(drawer, LV_ALIGN_BOTTOM_MID);
     lv_obj_set_size(drawer, lv_pct(100), 30);
@@ -348,13 +348,13 @@ void initDrawerMenu(lv_obj_t* parent) {
         "Option 6");
     lv_obj_set_height(dropdownList, lv_pct(50));
 
-    lv_obj_t* contBtn = lv_obj_create(contRowDrawer);
+    lv_obj_t * contBtn = lv_obj_create(contRowDrawer);
     lv_obj_set_size(contBtn, 150, lv_pct(100));
     lv_obj_set_style_bg_color(contBtn, lv_palette_lighten(LV_PALETTE_GREY, 4), LV_STATE_DEFAULT);
     lv_obj_set_style_border_opa(contBtn, LV_OPA_TRANSP, LV_STATE_DEFAULT);
     lv_obj_set_style_pad_all(contBtn, 0, LV_STATE_ANY);
 
-    lv_obj_t* btn1 = lv_btn_create(contBtn);
+    lv_obj_t * btn1 = lv_btn_create(contBtn);
     lv_obj_add_event_cb(btn1, toggleBtn_cb, LV_EVENT_VALUE_CHANGED, contBtn);
     lv_obj_add_flag(btn1, LV_OBJ_FLAG_CHECKABLE);
     lv_obj_set_size(btn1, lv_pct(50), lv_pct(100));
@@ -364,11 +364,11 @@ void initDrawerMenu(lv_obj_t* parent) {
     lv_obj_set_style_border_width(btn1, 3, LV_STATE_ANY);
     lv_obj_set_style_border_opa(btn1, LV_OPA_90, LV_STATE_ANY);
  
-    lv_obj_t* btnText = lv_label_create(btn1);
+    lv_obj_t * btnText = lv_label_create(btn1);
     lv_label_set_text(btnText, "S1");
     lv_obj_center(btnText);
 
-    lv_obj_t* btn2 = lv_btn_create(contBtn);
+    lv_obj_t * btn2 = lv_btn_create(contBtn);
     lv_obj_add_event_cb(btn2, toggleBtn_cb, LV_EVENT_VALUE_CHANGED, contBtn);
     lv_obj_add_flag(btn2, LV_OBJ_FLAG_CHECKABLE);
     lv_obj_set_size(btn2, lv_pct(50), lv_pct(100));
@@ -384,11 +384,11 @@ void initDrawerMenu(lv_obj_t* parent) {
 
 }
 
-void initKeyboardMenu(lv_obj_t* parent) {
-    lv_obj_t* kb = lv_keyboard_create(parent);
+void initKeyboardMenu(lv_obj_t * parent) {
+    lv_obj_t * kb = lv_keyboard_create(parent);
 
     /*Create a text area. The keyboard will write here*/
-    lv_obj_t* ta;
+    lv_obj_t * ta;
     ta = lv_textarea_create(parent);
     lv_obj_align(ta, LV_ALIGN_TOP_MID, 0, 10);
     lv_textarea_set_placeholder_text(ta, "Start typing");
@@ -398,18 +398,18 @@ void initKeyboardMenu(lv_obj_t* parent) {
     lv_keyboard_set_textarea(kb, ta);
 }
 
-void slider_cb(lv_event_t* e) {
-    lv_obj_t* label = lv_event_get_user_data(e);
-    lv_obj_t* target = lv_event_get_target(e);
+void slider_cb(lv_event_t * e) {
+    lv_obj_t * label = lv_event_get_user_data(e);
+    lv_obj_t * target = lv_event_get_target(e);
 
     int value = lv_slider_get_value(target);
     char buf[8];
     lv_snprintf(buf, sizeof(buf), "%d%%", value);
     lv_label_set_text(label, buf);
 }
-void initSettingsMenu(lv_obj_t* parent) {
-    lv_obj_t* cont = lv_menu_cont_create(parent);
-    lv_obj_t* cb;
+void initSettingsMenu(lv_obj_t * parent) {
+    lv_obj_t * cont = lv_menu_cont_create(parent);
+    lv_obj_t * cb;
     cb = lv_checkbox_create(cont);
     lv_checkbox_set_text(cb, "XRay");
     cb = lv_checkbox_create(cont);
@@ -423,7 +423,7 @@ void initSettingsMenu(lv_obj_t* parent) {
     lv_obj_set_style_pad_column(cont, 20, 0);
     lv_obj_set_style_pad_right(cont, 150, 0);
 
-    lv_obj_t* percentLabel; // Etichetta con testo costante
+    lv_obj_t * percentLabel; // Etichetta con testo costante
     percentLabel = lv_label_create(cont);
     lv_label_set_text(percentLabel, "Power");
 
@@ -431,7 +431,7 @@ void initSettingsMenu(lv_obj_t* parent) {
     lv_obj_add_flag(percentLabel, LV_OBJ_FLAG_FLEX_IN_NEW_TRACK);
     lv_label_set_text(percentLabel, "0%");
 
-    lv_obj_t* slider;
+    lv_obj_t * slider;
     slider = lv_slider_create(cont);
     lv_obj_set_flex_grow(slider, 1);
     lv_obj_set_style_pad_row(cont, 20, 0);
@@ -445,7 +445,7 @@ void initSettingsMenu(lv_obj_t* parent) {
     static lv_style_t style_sel;
     lv_style_init(&style_sel);
     lv_style_set_text_font(&style_sel, &lv_font_montserrat_22);
-    lv_obj_t* roller = lv_roller_create(cont);
+    lv_obj_t * roller = lv_roller_create(cont);
     lv_roller_set_options(roller, opts, LV_ROLLER_MODE_NORMAL);
     lv_roller_set_visible_row_count(roller, 2);
     lv_obj_add_style(roller, &style_sel, LV_PART_SELECTED);
@@ -454,7 +454,7 @@ void initSettingsMenu(lv_obj_t* parent) {
     cont = lv_menu_cont_create(parent);
 
 
-    lv_obj_t* contSpinbox = lv_obj_create(cont);
+    lv_obj_t * contSpinbox = lv_obj_create(cont);
     lv_obj_set_size(contSpinbox, 200, LV_SIZE_CONTENT);
     lv_obj_set_style_border_opa(contSpinbox, LV_OPA_TRANSP, 0);
     lv_obj_clear_flag(contSpinbox, LV_OBJ_FLAG_SCROLLABLE);
@@ -468,7 +468,7 @@ void initSettingsMenu(lv_obj_t* parent) {
 
     lv_coord_t h = lv_obj_get_height(spinbox);
 
-    lv_obj_t* btn = lv_btn_create(contSpinbox);
+    lv_obj_t * btn = lv_btn_create(contSpinbox);
     lv_obj_set_size(btn, h, h);
     lv_obj_align_to(btn, spinbox, LV_ALIGN_OUT_LEFT_MID, -5, 0);
     lv_obj_set_style_bg_img_src(btn, LV_SYMBOL_MINUS, 0);
@@ -484,7 +484,7 @@ void initSettingsMenu(lv_obj_t* parent) {
     
 }
 
-void initTransitionMenu(lv_obj_t* parent) {
+void initTransitionMenu(lv_obj_t * parent) {
     /* Switch con transizione */
     switch1 = lv_switch_create(parent);
 
@@ -507,7 +507,7 @@ void initTransitionMenu(lv_obj_t* parent) {
     lv_anim_set_path_cb(&ballAnim, lv_anim_path_ease_in_out);
 }
 
-void initMeterMenu(lv_obj_t* parent) {
+void initMeterMenu(lv_obj_t * parent) {
     meter = lv_meter_create(parent);
     lv_obj_center(meter);
     lv_obj_set_size(meter, 200, 200);

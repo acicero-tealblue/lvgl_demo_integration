@@ -25,23 +25,23 @@ static lv_style_t greenPressedStyle;
 static bool initialized = false;
 
 /* Puntatori ai gruppi dentali*/
-lv_obj_t* leftMostTeeth; //0
-lv_obj_t* dentalArcTopMiddleLeft; //1
-lv_obj_t* dentalArcTopFirstLeft; //2
-lv_obj_t* dentalArcTopFirstRight; //3
-lv_obj_t* dentalArcTopMiddleRight; //4
-lv_obj_t* dentalArcBottomMiddleLeft; //5
-lv_obj_t* dentalArcBottomFirstLeft; //6
-lv_obj_t* dentalArcBottomFirstRight; //7
-lv_obj_t* dentalArcBottomMiddleRight; //8
-lv_obj_t* dentalArcRightMost; //9
+lv_obj_t * leftMostTeeth; //0
+lv_obj_t * dentalArcTopMiddleLeft; //1
+lv_obj_t * dentalArcTopFirstLeft; //2
+lv_obj_t * dentalArcTopFirstRight; //3
+lv_obj_t * dentalArcTopMiddleRight; //4
+lv_obj_t * dentalArcBottomMiddleLeft; //5
+lv_obj_t * dentalArcBottomFirstLeft; //6
+lv_obj_t * dentalArcBottomFirstRight; //7
+lv_obj_t * dentalArcBottomMiddleRight; //8
+lv_obj_t * dentalArcRightMost; //9
 
 lv_obj_t* dentalGroupsArray[NUMDENTALGROUPS]; // vettore per scorrere facilmente tra i vari gruppi dentali
 
 
 /* FUNCTIONS PROTOTIPES */
-void createDentalGroup(lv_obj_t* dentalGroup, lv_img_dsc_t* imgDesc);
-void changeDentalGroupPositioning(lv_obj_t* dentalGroup, int left_right, int top_bottom, lv_coord_t horizontalChange, lv_coord_t verticalChange);
+void createDentalGroup(lv_obj_t * dentalGroup, lv_img_dsc_t * imgDesc);
+void changeDentalGroupPositioning(lv_obj_t * dentalGroup, int left_right, int top_bottom, lv_coord_t horizontalChange, lv_coord_t verticalChange);
 void setUpCallbackBtnReset();
 void dentalArcInit(lv_obj_t* parent) {
     
@@ -116,7 +116,7 @@ void dentalArcInit(lv_obj_t* parent) {
 * Funzione per il set up di un gruppo dentale. Il primo parametro è un img lvgl mentre il secondo è il descrittore dell'immagine
 * che è salvato nel rispettivo file .c
 */
-void createDentalGroup(lv_obj_t* dentalGroup, lv_img_dsc_t* imgDesc) {
+void createDentalGroup(lv_obj_t * dentalGroup, lv_img_dsc_t * imgDesc) {
     lv_img_set_src(dentalGroup, imgDesc);
     lv_img_set_zoom(dentalGroup, zoomFactor);
     lv_obj_add_flag(dentalGroup, LV_OBJ_FLAG_CLICKABLE);
@@ -132,7 +132,7 @@ void createDentalGroup(lv_obj_t* dentalGroup, lv_img_dsc_t* imgDesc) {
 * left_right: +1 se dx, -1 se sx
 * top_bottom: +1 se bottom, -1 se top, 0 se al centro
 */
-void changeDentalGroupPositioning(lv_obj_t* dentalGroup, int left_right, int top_bottom, lv_coord_t horizontalChange, lv_coord_t verticalChange) {
+void changeDentalGroupPositioning(lv_obj_t * dentalGroup, int left_right, int top_bottom, lv_coord_t horizontalChange, lv_coord_t verticalChange) {
     lv_coord_t dentalGroupWidth = lv_obj_get_width(dentalGroup); // width senza contare lo zoom
     lv_coord_t dentalGroupHeight = lv_obj_get_height(dentalGroup);
 
@@ -156,8 +156,8 @@ void resetInitialChecked() {
     }
 }
 
-void topSelectionChecked(lv_event_t* e) {
-    lv_obj_t* target = lv_event_get_target(e);
+void topSelectionChecked(lv_event_t * e) {
+    lv_obj_t * target = lv_event_get_target(e);
     lv_state_t state = lv_obj_get_state(target);
     if (initialized) {
         if (state % 2 != 0) {
@@ -177,8 +177,8 @@ void topSelectionChecked(lv_event_t* e) {
     }
 }
 
-void bottomLeftSelectionChecked(lv_event_t* e) {
-    lv_obj_t* target = lv_event_get_target(e);
+void bottomLeftSelectionChecked(lv_event_t * e) {
+    lv_obj_t * target = lv_event_get_target(e);
     lv_state_t state = lv_obj_get_state(target);
     if (initialized) {
         if (state % 2 != 0) {
@@ -201,7 +201,7 @@ void bottomLeftSelectionChecked(lv_event_t* e) {
 }
 
 void bottomRightSelectionChecked(lv_event_t* e) {
-    lv_obj_t* target = lv_event_get_target(e);
+    lv_obj_t * target = lv_event_get_target(e);
     lv_state_t state = lv_obj_get_state(target);
     if (initialized) {
         if (state % 2 != 0) {
@@ -222,8 +222,8 @@ void bottomRightSelectionChecked(lv_event_t* e) {
     }
 }
 
-void bottomMidSelectionChecked(lv_event_t* e) {
-    lv_obj_t* target = lv_event_get_target(e);
+void bottomMidSelectionChecked(lv_event_t * e) {
+    lv_obj_t * target = lv_event_get_target(e);
     lv_state_t state = lv_obj_get_state(target);
     if (initialized) {
         if (state % 2 != 0) {
@@ -240,8 +240,8 @@ void bottomMidSelectionChecked(lv_event_t* e) {
     }
 }
 
-void topMidSelectionChecked(lv_event_t* e) {
-    lv_obj_t* target = lv_event_get_target(e);
+void topMidSelectionChecked(lv_event_t * e) {
+    lv_obj_t * target = lv_event_get_target(e);
     lv_state_t state = lv_obj_get_state(target);
     if (initialized) {
         if (state % 2 != 0) {

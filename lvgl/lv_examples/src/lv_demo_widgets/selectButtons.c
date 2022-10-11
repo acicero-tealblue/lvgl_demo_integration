@@ -13,17 +13,17 @@ extern const int zoomFactor;
 extern lv_style_t greenPressedStyle;
 
 /* Puntatore ai bottoni*/
-lv_obj_t* topSelectionButton;
-lv_obj_t* BottomMidSelectionButton;
-lv_obj_t* BottomLeftSelectionButton;
-lv_obj_t* BottomRightSelectionButton;
-lv_obj_t* topMidSelectionButton;
+lv_obj_t * topSelectionButton;
+lv_obj_t * BottomMidSelectionButton;
+lv_obj_t * BottomLeftSelectionButton;
+lv_obj_t * BottomRightSelectionButton;
+lv_obj_t * topMidSelectionButton;
 
-void deselectAllOtherButtons(lv_event_t* e);
+void deselectAllOtherButtons(lv_event_t * e);
 
-void isOnBtnAreaCentered(lv_event_t* e){
+void isOnBtnAreaCentered(lv_event_t * e){
     lv_event_code_t code = lv_event_get_code(e);
-    lv_obj_t* obj = lv_event_get_target(e);
+    lv_obj_t * obj = lv_event_get_target(e);
     if (code == LV_EVENT_HIT_TEST) {
         lv_hit_test_info_t* info = lv_event_get_param(e);        
         lv_area_t area;
@@ -38,11 +38,11 @@ void isOnBtnAreaCentered(lv_event_t* e){
     }
 }
 
-void isOnBtnAreaHorizontalCentered(lv_event_t* e) {
+void isOnBtnAreaHorizontalCentered(lv_event_t * e) {
     lv_event_code_t code = lv_event_get_code(e);
-    lv_obj_t* obj = lv_event_get_target(e);
+    lv_obj_t * obj = lv_event_get_target(e);
     if (code == LV_EVENT_HIT_TEST) {
-        lv_hit_test_info_t* info = lv_event_get_param(e);
+        lv_hit_test_info_t * info = lv_event_get_param(e);
         lv_area_t area;
         lv_obj_get_coords(obj, &area);
         int w = area.x2 - area.x1;
@@ -55,7 +55,7 @@ void isOnBtnAreaHorizontalCentered(lv_event_t* e) {
 }
 
 
-void imgButtonSetUp(lv_obj_t* obj, lv_img_dsc_t* desc) {
+void imgButtonSetUp(lv_obj_t * obj, lv_img_dsc_t * desc) {
     lv_img_set_src(obj, desc);
     lv_img_set_zoom(obj, zoomFactor);
     lv_obj_add_flag(obj, LV_OBJ_FLAG_CLICKABLE);
@@ -65,7 +65,7 @@ void imgButtonSetUp(lv_obj_t* obj, lv_img_dsc_t* desc) {
 }
 
 
-void buttonsInit(lv_obj_t* parent) {
+void buttonsInit(lv_obj_t * parent) {
     topSelectionButton = lv_img_create(parent);
     imgButtonSetUp(topSelectionButton, &topSelectionButtonImg);
     lv_obj_align(topSelectionButton, LV_ALIGN_TOP_MID, 0, 25);
@@ -130,8 +130,8 @@ void deselectAllButtons() {
     lv_obj_clear_state(topMidSelectionButton, LV_STATE_CHECKED);
 }
 
-void deselectAllOtherButtons(lv_event_t* e) {
-    lv_obj_t* target = lv_event_get_target(e);
+void deselectAllOtherButtons(lv_event_t * e) {
+    lv_obj_t * target = lv_event_get_target(e);
     lv_state_t state = lv_obj_get_state(target);
     if (state % 2 != 0) {
         lv_obj_clear_state(topSelectionButton, LV_STATE_CHECKED);
