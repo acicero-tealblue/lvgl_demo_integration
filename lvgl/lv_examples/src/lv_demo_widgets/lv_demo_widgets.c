@@ -80,12 +80,12 @@ void tileSwipe_cb(lv_event_t* e) {
 void app_create(void){
 
     tileView = lv_tileview_create(NULL);
-    mainScreen = lv_tileview_add_tile(tileView, 0, 0, LV_DIR_RIGHT);
+    //mainScreen = lv_tileview_add_tile(tileView, 0, 0, LV_DIR_RIGHT);
     widgetScreen = lv_tileview_add_tile(tileView, 1, 0, LV_DIR_LEFT);
 
 
-    lv_obj_set_size(mainScreen, 1280, 800);
-    lv_obj_clear_flag(mainScreen, LV_OBJ_FLAG_SCROLLABLE);
+    //lv_obj_set_size(mainScreen, 1280, 800);
+    //lv_obj_clear_flag(mainScreen, LV_OBJ_FLAG_SCROLLABLE);
 
     lv_obj_set_size(widgetScreen, 1280, 800);
     lv_obj_clear_flag(widgetScreen, LV_OBJ_FLAG_SCROLLABLE);
