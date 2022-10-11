@@ -13,6 +13,7 @@ extern "C" {
     /*********************
      *      INCLUDES
      *********************/
+#include "lv_obj.h"
 #include <stdbool.h>
 
      /*********************
@@ -151,7 +152,7 @@ extern "C" {
       * @param param         arbitrary data depending on the widget type and the event. (Usually `NULL`)
       * @return LV_RES_OK: `obj` was not deleted in the event; LV_RES_INV: `obj` was deleted in the event_code
       */
-    lv_res_t lv_event_send(struct _lv_obj_t* obj, lv_event_code_t event_code, void* param);
+    lv_res_t lv_event_send(struct _lv_obj_t * obj, lv_event_code_t event_code, void* param);
 
     /**
      * Used by the widgets internally to call the ancestor widget types's event handler
@@ -159,7 +160,7 @@ extern "C" {
      * @param e         pointer to the event descriptor
      * @return          LV_RES_OK: the target object was not deleted in the event; LV_RES_INV: it was deleted in the event_code
      */
-    lv_res_t lv_obj_event_base(const lv_obj_class_t* class_p, lv_event_t * e);
+    lv_res_t lv_obj_event_base(const lv_obj_class_t * class_p, lv_event_t * e);
 
     /**
      * Get the object originally targeted by the event. It's the same even if the event is bubbled.
