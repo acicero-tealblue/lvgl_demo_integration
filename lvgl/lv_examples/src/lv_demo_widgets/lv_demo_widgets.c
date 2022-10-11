@@ -9,7 +9,7 @@
 #include "../../../lvgl/lvgl.h"
 #include "../../lv_ex_conf.h"
 ﻿#include "app.h"
-//#include "../../lv_examples.h"
+#include "../../lv_examples.h"
 //#include "lv_demo_widgets.h"
 //#include <stdio.h>
 
