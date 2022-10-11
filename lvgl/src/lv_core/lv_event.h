@@ -117,7 +117,7 @@ extern "C" {
      * Events are used to notify the user of some action being taken on the object.
      * For details, see ::lv_event_t.
      */
-    typedef void (*lv_event_cb_t)(lv_event_t * e);
+    typedef void (* lv_event_cb_t)(lv_event_t * e);
 
     /**
      * Used as the event parameter of ::LV_EVENT_HIT_TEST to check if an `point` can click the object or not.
