@@ -53,12 +53,12 @@ extern lv_img_dsc_t topMidSelectionButtonImg;
 
 
 
-void reset_cb(lv_event_t * e) {
-    lv_event_code_t code = lv_event_get_code(e);
-    if (code == LV_EVENT_CLICKED) {
-        resetInitialChecked();
-    }
-}
+//void reset_cb(lv_event_t * e) {
+//    lv_event_code_t code = lv_event_get_code(e);
+//    if (code == LV_EVENT_CLICKED) {
+//        resetInitialChecked();
+//    }
+//}
 
 static bool widgetMenuAttivo = false;
 void tileSwipe_cb(lv_event_t * e) {
@@ -157,7 +157,7 @@ void app_create(void){
 
     lv_coord_t dimReset = lv_obj_get_width(resetBtn) / 3;
     lv_obj_align(resetBtn, LV_ALIGN_TOP_MID, dimReset, 25);
-    lv_obj_add_event_cb(resetBtn, reset_cb, LV_EVENT_CLICKED, NULL);
+    //lv_obj_add_event_cb(resetBtn, reset_cb, LV_EVENT_CLICKED, NULL);
     lv_obj_add_event_cb(resetBtn, deselectAllButtons, LV_EVENT_CLICKED, NULL);
 
     lv_obj_add_style(resetBtn, &buttonPressedStyle, LV_STATE_PRESSED);
