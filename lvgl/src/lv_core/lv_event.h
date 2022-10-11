@@ -13,7 +13,7 @@ extern "C" {
     /*********************
      *      INCLUDES
      *********************/
-#include <stdbool.h>
+//#include <stdbool.h>
 
      /*********************
       *      DEFINES
