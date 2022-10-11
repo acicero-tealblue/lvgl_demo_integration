@@ -72,7 +72,7 @@ void tileSwipe_cb(lv_event_t * e) {
     }
 }
 
-void app_create(){
+void app_create(void){
 
     tileView = lv_tileview_create(NULL);
     mainScreen = lv_tileview_add_tile(tileView, 0, 0, LV_DIR_RIGHT);
@@ -127,7 +127,7 @@ void app_create(){
     * Inizializzo bocca
     */
 
-    lv_obj_t* teethContainer = lv_obj_create(mainScreen);
+    lv_obj_t * teethContainer = lv_obj_create(mainScreen);
 
 
     lv_obj_align(teethContainer, LV_ALIGN_CENTER, 0, 0);
