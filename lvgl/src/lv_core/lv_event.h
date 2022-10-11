@@ -34,22 +34,22 @@ extern "C" {
         LV_EVENT_ALL = 0,
 
         /** Input device events*/
-        LV_EVENT_PRESSED,             /**< The object has been pressed*/
-        LV_EVENT_PRESSING,            /**< The object is being pressed (called continuously while pressing)*/
-        LV_EVENT_PRESS_LOST,          /**< The object is still being pressed but slid cursor/finger off of the object */
-        LV_EVENT_SHORT_CLICKED,       /**< The object was pressed for a short period of time, then released it. Not called if scrolled.*/
-        LV_EVENT_LONG_PRESSED,        /**< Object has been pressed for at least `long_press_time`.  Not called if scrolled.*/
-        LV_EVENT_LONG_PRESSED_REPEAT, /**< Called after `long_press_time` in every `long_press_repeat_time` ms.  Not called if scrolled.*/
-        LV_EVENT_CLICKED,             /**< Called on release if not scrolled (regardless to long press)*/
-        LV_EVENT_RELEASED,            /**< Called in every cases when the object has been released*/
+        //LV_EVENT_PRESSED,             /**< The object has been pressed*/
+        //LV_EVENT_PRESSING,            /**< The object is being pressed (called continuously while pressing)*/
+        //LV_EVENT_PRESS_LOST,          /**< The object is still being pressed but slid cursor/finger off of the object */
+        //LV_EVENT_SHORT_CLICKED,       /**< The object was pressed for a short period of time, then released it. Not called if scrolled.*/
+        //LV_EVENT_LONG_PRESSED,        /**< Object has been pressed for at least `long_press_time`.  Not called if scrolled.*/
+        //LV_EVENT_LONG_PRESSED_REPEAT, /**< Called after `long_press_time` in every `long_press_repeat_time` ms.  Not called if scrolled.*/
+        //LV_EVENT_CLICKED,             /**< Called on release if not scrolled (regardless to long press)*/
+        //LV_EVENT_RELEASED,            /**< Called in every cases when the object has been released*/
         LV_EVENT_SCROLL_BEGIN,        /**< Scrolling begins. The event parameter is a pointer to the animation of the scroll. Can be modified*/
         LV_EVENT_SCROLL_THROW_BEGIN,
         LV_EVENT_SCROLL_END,          /**< Scrolling ends*/
         LV_EVENT_SCROLL,              /**< Scrolling*/
-        LV_EVENT_GESTURE,             /**< A gesture is detected. Get the gesture with `lv_indev_get_gesture_dir(lv_indev_get_act());` */
-        LV_EVENT_KEY,                 /**< A key is sent to the object. Get the key with `lv_indev_get_key(lv_indev_get_act());`*/
-        LV_EVENT_FOCUSED,             /**< The object is focused*/
-        LV_EVENT_DEFOCUSED,           /**< The object is defocused*/
+        //LV_EVENT_GESTURE,             /**< A gesture is detected. Get the gesture with `lv_indev_get_gesture_dir(lv_indev_get_act());` */
+        //LV_EVENT_KEY,                 /**< A key is sent to the object. Get the key with `lv_indev_get_key(lv_indev_get_act());`*/
+        //LV_EVENT_FOCUSED,             /**< The object is focused*/
+        //LV_EVENT_DEFOCUSED,           /**< The object is defocused*/
         LV_EVENT_LEAVE,               /**< The object is defocused but still selected*/
         LV_EVENT_HIT_TEST,            /**< Perform advanced hit-testing*/
 
@@ -67,13 +67,13 @@ extern "C" {
 
         /** Special events*/
         LV_EVENT_VALUE_CHANGED,       /**< The object's value has changed (i.e. slider moved)*/
-        LV_EVENT_INSERT,              /**< A text is inserted to the object. The event data is `char *` being inserted.*/
-        LV_EVENT_REFRESH,             /**< Notify the object to refresh something on it (for the user)*/
+        //LV_EVENT_INSERT,              /**< A text is inserted to the object. The event data is `char *` being inserted.*/
+        //LV_EVENT_REFRESH,             /**< Notify the object to refresh something on it (for the user)*/
         LV_EVENT_READY,               /**< A process has finished*/
-        LV_EVENT_CANCEL,              /**< A process has been cancelled */
+        //LV_EVENT_CANCEL,              /**< A process has been cancelled */
 
         /** Other events*/
-        LV_EVENT_DELETE,              /**< Object is being deleted*/
+        //LV_EVENT_DELETE,              /**< Object is being deleted*/
         LV_EVENT_CHILD_CHANGED,       /**< Child was removed, added, or its size, position were changed */
         LV_EVENT_CHILD_CREATED,       /**< Child was created, always bubbles up to all parents*/
         LV_EVENT_CHILD_DELETED,       /**< Child was deleted, always bubbles up to all parents*/
