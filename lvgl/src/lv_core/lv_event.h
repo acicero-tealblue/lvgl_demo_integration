@@ -135,7 +135,7 @@ extern "C" {
      * In the event use `const lv_area_t * area = lv_event_get_cover_area(e)` to get the area to check
      * and `lv_event_set_cover_res(e, res)` to set the result.
      */
-    t//ypedef struct {
+    //ypedef struct {
         //lv_cover_res_t res;
         //const lv_area_t * area;
     //} lv_cover_check_info_t;
