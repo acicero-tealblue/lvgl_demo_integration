@@ -62,8 +62,8 @@ extern lv_img_dsc_t topMidSelectionButtonImg;
 
 static bool widgetMenuAttivo = false;
 void tileSwipe_cb(lv_event_t * e) {
-    lv_obj_t * target = lv_event_get_target(e);
-    lv_obj_t * tile = lv_tileview_get_tile_act(target);
+    lv_obj_t* target = lv_event_get_target(e);
+    lv_obj_t* tile = lv_tileview_get_tile_act(target);
     if (tile == widgetScreen && !widgetMenuAttivo) {
         menuLoading(widgetScreen);
         widgetMenuAttivo = true;
