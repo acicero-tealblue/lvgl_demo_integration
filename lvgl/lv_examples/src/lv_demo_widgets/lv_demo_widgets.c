@@ -7,12 +7,11 @@
  *      INCLUDES
  *********************/
 
-#include "app.h"
+
 
 #include "../../../lvgl/lvgl.h"
-
 #include "../../../lv_ex_conf.h"
-
+#include "app.h"
 
 
 //#include "../../lv_examples.h"
