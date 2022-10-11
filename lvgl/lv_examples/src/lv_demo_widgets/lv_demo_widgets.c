@@ -7,11 +7,13 @@
  *      INCLUDES
  *********************/
 
+#include "app.h"
 
 #include "../../../lvgl/lvgl.h"
+
 #include "../../../lv_ex_conf.h"
 
-#include "app.h"
+
 
 //#include "../../lv_examples.h"
 //#include "lv_demo_widgets.h"
@@ -54,21 +56,21 @@ extern lv_img_dsc_t topMidSelectionButtonImg;
 
 
 
-//void reset_cb(lv_event_t * e) {
-//    lv_event_code_t code = lv_event_get_code(e);
-//    if (code == LV_EVENT_CLICKED) {
-//        resetInitialChecked();
-//    }
-//}
+void reset_cb(lv_event_t * e) {
+    lv_event_code_t code = lv_event_get_code(e);
+    if (code == LV_EVENT_CLICKED) {
+        resetInitialChecked();
+    }
+}
 
 static bool widgetMenuAttivo = false;
-void tileSwipe_cb(lv_event_t * e) {
-    lv_obj_t* target = lv_event_get_target(e);
-    lv_obj_t* tile = lv_tileview_get_tile_act(target);
-    if (tile == widgetScreen && !widgetMenuAttivo) {
+void tileSwipe_cb(lv_event_t* e) {
+      lv_obj_t * target = lv_event_get_target(e);
+      lv_obj_t * tile = lv_tileview_get_tile_act(target);
+      if (tile == widgetScreen && !widgetMenuAttivo) {
         menuLoading(widgetScreen);
         widgetMenuAttivo = true;
-    }
+   }
     else if (tile == mainScreen && widgetMenuAttivo) {
         menuHiding();
 
