@@ -32,10 +32,10 @@ static lv_style_t whiteBackground;
 lv_style_t greenPressedStyle;
 const int zoomFactor = 90; // fattore di zoom per le immagini: 256 è senza zoom, >256= immagine più grande, <256 inmmagine più piccola
 
-lv_obj_t* resetLabel;
-lv_obj_t* tileView;
-lv_obj_t* mainScreen;
-lv_obj_t* widgetScreen;
+lv_obj_t * resetLabel;
+lv_obj_t * tileView;
+lv_obj_t * mainScreen;
+lv_obj_t * widgetScreen;
 
 /* Risorse in file .c*/
 extern lv_font_t roboto_14;
@@ -50,7 +50,7 @@ extern lv_img_dsc_t topMidSelectionButtonImg;
 
 
 
-void reset_cb(lv_event_t* e) {
+void reset_cb(lv_event_t * e) {
     lv_event_code_t code = lv_event_get_code(e);
     if (code == LV_EVENT_CLICKED) {
         resetInitialChecked();
@@ -58,7 +58,7 @@ void reset_cb(lv_event_t* e) {
 }
 
 static bool widgetMenuAttivo = false;
-void tileSwipe_cb(lv_event_t* e) {
+void tileSwipe_cb(lv_event_t * e) {
     lv_obj_t* target = lv_event_get_target(e);
     lv_obj_t* tile = lv_tileview_get_tile_act(target);
     if (tile == widgetScreen && !widgetMenuAttivo) {
@@ -181,8 +181,8 @@ void app_create(){
 }
 
 void lv_demo_widgets(void) {
-    lv_disp_t* dispp = lv_disp_get_default();
-    lv_theme_t* theme = lv_theme_default_init(dispp, lv_palette_main(LV_PALETTE_BLUE), lv_palette_main(LV_PALETTE_RED),
+    lv_disp_t * dispp = lv_disp_get_default();
+    lv_theme_t * theme = lv_theme_default_init(dispp, lv_palette_main(LV_PALETTE_BLUE), lv_palette_main(LV_PALETTE_RED),
         false, LV_FONT_DEFAULT);
     lv_disp_set_theme(dispp, theme);
 
