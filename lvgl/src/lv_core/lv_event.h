@@ -86,11 +86,11 @@ extern "C" {
         LV_EVENT_GET_SELF_SIZE,       /**< Get the internal size of a widget*/
 
         /** Events of optional LVGL components*/
-#if LV_USE_MSG
+//#if LV_USE_MSG
 
-        LV_EVENT_MSG_RECEIVED,
+        //LV_EVENT_MSG_RECEIVED,
 
-#endif // LV_USE_MSG
+//#endif // LV_USE_MSG
 
         _LV_EVENT_LAST,               /** Number of default events*/
 
