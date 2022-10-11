@@ -23,7 +23,7 @@ extern "C" {
  **********************/
 extern lv_obj_t* mainScreen;
 
-void app_init_screen();
+void lv_demo_widgets();
 #ifdef __cplusplus
 } /* extern "C" */
 #endif
