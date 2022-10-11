@@ -50,7 +50,7 @@ extern "C" {
         //LV_EVENT_KEY,                 /**< A key is sent to the object. Get the key with `lv_indev_get_key(lv_indev_get_act());`*/
         //LV_EVENT_FOCUSED,             /**< The object is focused*/
         //LV_EVENT_DEFOCUSED,           /**< The object is defocused*/
-        LV_EVENT_LEAVE,               /**< The object is defocused but still selected*/
+        //LV_EVENT_LEAVE,               /**< The object is defocused but still selected*/
         LV_EVENT_HIT_TEST,            /**< Perform advanced hit-testing*/
 
         /** Drawing events*/
@@ -66,7 +66,7 @@ extern "C" {
         LV_EVENT_DRAW_PART_END,      /**< Finishing to draw a part. The event parameter is `lv_obj_draw_dsc_t *`. */
 
         /** Special events*/
-        LV_EVENT_VALUE_CHANGED,       /**< The object's value has changed (i.e. slider moved)*/
+        //LV_EVENT_VALUE_CHANGED,       /**< The object's value has changed (i.e. slider moved)*/
         //LV_EVENT_INSERT,              /**< A text is inserted to the object. The event data is `char *` being inserted.*/
         //LV_EVENT_REFRESH,             /**< Notify the object to refresh something on it (for the user)*/
         LV_EVENT_READY,               /**< A process has finished*/
@@ -87,16 +87,16 @@ extern "C" {
         LV_EVENT_GET_SELF_SIZE,       /**< Get the internal size of a widget*/
 
         /** Events of optional LVGL components*/
-#if LV_USE_MSG
+//#if LV_USE_MSG
 
-       /LV_EVENT_MSG_RECEIVED,
+       ///LV_EVENT_MSG_RECEIVED,
 
-#endif // LV_USE_MSG
+       //#endif // LV_USE_MSG
 
-        _LV_EVENT_LAST,               /** Number of default events*/
+        //_LV_EVENT_LAST,               /** Number of default events*/
 
 
-        LV_EVENT_PREPROCESS = 0x80,   /** This is a flag that can be set with an event so it's processed
+        //LV_EVENT_PREPROCESS = 0x80,   /** This is a flag that can be set with an event so it's processed
                                           before the class default event processing */
     } lv_event_code_t;
 
